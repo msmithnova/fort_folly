@@ -2,17 +2,18 @@ require 'spec_helper'
 
 describe "Static pages" do
 
+  let(:base_title) { "Fort Folly Website" }
+
   describe "Home page" do
 
-    it "should have the h1 'Fort Folly Home Page'" do
+    it "should have the h1 'Fort Folly Website'" do
       visit '/static_pages/home'
-      page.should have_selector('h1', :text => 'Fort Folly Home Page')
+      page.should have_selector('h1', :text => 'Fort Folly Website')
     end
 
     it "should have the title 'Home'" do
       visit '/static_pages/home'
-      page.should have_selector('title',
-        :text => "Fort Folly Home Page | Home")
+      page.should have_selector('title', :text => "#{base_title} | Home")
     end
   end
 
@@ -26,8 +27,7 @@ describe "Static pages" do
     it "should have the title 'Help'" do
       visit '/static_pages/help'
       #save_and_open_page
-      page.should have_selector('title',
-        :text => "Fort Folly Home Page | Help")
+      page.should have_selector('title', :text => "#{base_title} | Help")
     end
   end
 
@@ -40,8 +40,7 @@ describe "Static pages" do
 
     it "should have the title 'About Us'" do
       visit '/static_pages/about'
-      page.should have_selector('title',
-        :text => "Fort Folly Home Page | About Us")
+      page.should have_selector('title', :text => "#{base_title} | About Us")
     end
   end
 end
