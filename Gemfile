@@ -11,14 +11,14 @@ group :development, :test do
   gem 'sqlite3'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'database_cleaner'
-  gem 'capybara' , " ~> 2.0.3"
+  gem 'capybara' , " ~> 1.1.2"
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
 end
 
