@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'rack', '1.3.2 '
+gem 'bootstrap-sass', '2.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -24,7 +25,7 @@ end
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
-  gem 'rb-inotify', '0.8.8'
+  gem 'rb-inotify', '~> 0.9'
   gem 'libnotify', '0.5.9'
 end
 
