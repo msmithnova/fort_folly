@@ -3,8 +3,8 @@
 
 # Listing 3.38 and `bundle exec guard init spork`
 require 'active_support/core_ext'
-#guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
-guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' } do
+guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' }, :wait => 120 do
+#guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' }, do
   watch('config/application.rb')
   watch('config/environment.rb')
   #watch('config/environments/test.rb')
