@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
 
+  #if Rails.env.production?
+    #force_ssl
+  #end
+
   # Force signout to prevent CSRF attacks
   def handle_unverified_request
     sign_out
