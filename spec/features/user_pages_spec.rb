@@ -54,8 +54,8 @@ describe "UserPages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_selector('h1',    text: 'Sign up') }
-    it { should have_selector('title', text: "#{base_title} | Sign up") }
+    it { should have_selector('h1',    text: 'Sign Up') }
+    it { should have_selector('title', text: "#{base_title} | Sign Up") }
   end
 
   describe "profile page" do
@@ -155,7 +155,7 @@ describe "UserPages" do
 
         it { should have_selector('title', text: user.name) }
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
-        it { should have_link('Sign out') }
+        it { should have_link('Sign Out') }
       end
     end
   end
@@ -186,7 +186,7 @@ describe "UserPages" do
 
       it { should have_selector('title', text: new_name) }
       it { should have_selector('div.alert.alert-success') }
-      it { should have_link('Sign out', href: signout_path) }
+      it { should have_link('Sign Out', href: signout_path) }
       specify { user.reload.name.should  == new_name }
       specify { user.reload.email.should == new_email }
     end

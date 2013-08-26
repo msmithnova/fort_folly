@@ -11,6 +11,10 @@ describe "Static pages" do
     it { should have_selector('h1', text: 'Fort Folly Website') }
     it { should have_selector('title', text: "#{base_title}") }
     it { should_not have_selector('title', text: '| Home') }
+  end
+
+  describe "Feed page" do
+   before { visit root_path }
 
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
@@ -18,7 +22,7 @@ describe "Static pages" do
         FactoryGirl.create(:micropost, user: user, content: "Lorem ipsum")
         FactoryGirl.create(:micropost, user: user, content: "Dolor sit amet")
         sign_in user
-        visit root_path
+        visit feed_path
       end
 
       it "should render the user's feed" do
@@ -32,7 +36,7 @@ describe "Static pages" do
         let(:other_user) { FactoryGirl.create(:user) }
         before do
           other_user.follow!(user)
-          visit root_path
+          visit feed_path
         end
 
         it { should have_link("0 following", href: following_user_path(user)) }
