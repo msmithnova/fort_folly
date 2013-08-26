@@ -1,7 +1,7 @@
 <% if signed_in? %>
   <div class="row">
     <div class="span9">
-      Put home page info here!
+      <%= render 'shared/home' %>
     </div>
     <aside class="span3">
       <section>
@@ -18,13 +18,5 @@
     </aside>
   </div>
 <% else %>
-  <div class="center hero-unit">
-    <h1>Welcome to the Fort Folly Website</h1>
-
-    <h2>
-      This is the home page. Add more content here!
-    </h2>
-
-  </div>
-
+  <%= render 'shared/home' %>
 <% end %>
