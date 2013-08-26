@@ -18,8 +18,13 @@ html {
 
 body {
   padding-top: 60px;
+  background-image: url("/assets/native-american-spirit-collage.jpg")
 }
 
+body #main{
+  background-color:#ffffff;
+  padding: 10px;
+}
 section {
   overflow: auto;
 }

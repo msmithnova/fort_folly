@@ -1,9 +1,9 @@
 <% if signed_in? %>
   <div class="row">
-    <aside class="span9">
+    <div class="span9">
       Put home page info here!
-    </aside>
-    <div class="span3">
+    </div>
+    <aside class="span3">
       <section>
         <%= render 'shared/user_info' %>
       </section>
@@ -15,7 +15,7 @@
       </section>
       <h3>Micropost Feed</h3>
       <%= render 'shared/feed', page_links: false  %>
-    </div>
+    </aside>
   </div>
 <% else %>
   <div class="center hero-unit">
