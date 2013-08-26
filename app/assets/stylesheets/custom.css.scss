@@ -18,13 +18,17 @@ html {
 
 body {
   padding-top: 60px;
-  background-image: url("/assets/native-american-spirit-collage.jpg")
+  background-image: url("/assets/native-american-spirit-collage.jpg");
+  #main{
+    background-color:#ffffff;
+    padding: 10px;
+  }
 }
 
-body #main{
-  background-color:#ffffff;
-  padding: 10px;
+.main-body {
+  font-size: 1.1em;
 }
+
 section {
   overflow: auto;
 }
@@ -38,6 +42,16 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.float-right {
+   float: right;
+   margin-left: 10px;
+}
+
+.float-left {
+   float: left;
+   margin-right: 10px;
 }
 
 /* typography */
@@ -110,6 +124,11 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+#footer-address {
+  text-align: center;
+  font-size: 0.8em;
 }
 
 /* miscellaneous */
@@ -250,3 +269,4 @@ aside {
     margin-bottom: 5px;
   }
 }
+

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "UserPages" do
 
-  let(:base_title) { "Fort Folly Website" }
+  let(:base_title) { "Fort Folly First Nation" }
   subject { page }
 
   describe "index" do

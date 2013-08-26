@@ -2,13 +2,13 @@ require 'spec_helper'
 
 describe "Static pages" do
 
-  let(:base_title) { "Fort Folly Website" }
+  let(:base_title) { "Fort Folly First Nation" }
   subject { page }
 
   describe "Home page" do
     before { visit root_path }
 
-    it { should have_selector('h1', text: 'Fort Folly Website') }
+    it { should have_selector('h1', text: 'Fort Folly First Nation') }
     it { should have_selector('title', text: "#{base_title}") }
     it { should_not have_selector('title', text: '| Home') }
   end

@@ -1,9 +1,31 @@
-  <div class="center hero-unit">
-    <img src="/assets/fffnsign.png" alt="logo" width="200" height="200">
-    <h1>Fort Folly First Nation</h1>
-
-    <h2>
-      Tagline or brief message.
-    </h2>
+<div class="center hero-unit">
+  <div class="row">
+    <div class="span2">
+      <img src="/assets/flag.jpg" alt="Mi'kmaq Flag" width="150" height="100">
+    </div>
+    <% if signed_in? %>
+    <div class="span3">
+    <% else %>
+    <div class="span6">
+    <% end %>
+      <img src="/assets/fffnsign.png" alt="Reserve Logo" width="200" height="200">
+    </div>
+    <div class="span2">
+      <img src="/assets/pipe.jpg" alt="Pipe Image" width="133" height="100">
+    </div>
   </div>
-This is the home page. Add more content here!
+  <div class="row">
+    <h1>Fort Folly First Nation</h1>
+    <h2>Welcome to our page. Enjoy your stay.</h2>
+  </div>
+</div>
+<div class="main-body">
+  <div class="float-right">
+    <img src="/assets/westmorland.jpg" alt="Westmorland Map" width="250" height="177">
+  </div>
+  <p>The Fort Folly First Nation Band is located in Dorchester, NB, about 13kms west of Sackville, NB, and about 40kms east of Moncton, NB.</p>
+
+  <p>The community resides on approximately 40 hectares of land.</p>
+
+  <p>Fort Folly First Nation has a registered population of 106.</p>
+</div>
