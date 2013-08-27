@@ -1,0 +1,43 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<%= f.label :user_id %>
+<%= f.select :user_id, "<option>Nothing selected</option>" + options_from_collection_for_select(User.all, "id", "name", @person.user_id) %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :sex %>
+<%= f.select :sex, options_for_select(["na", "male", "female"], @person.sex) %>
+
+<%= f.label :band_member %>
+<%= f.select :band_member, options_for_select([false,true], @person.band_member) %>
+
+<%= f.label :registry_number %>
+<%= f.number_field :registry_number %>
+
+<%= f.label :father_id %>
+<%= f.select :father_id, "<option>Nothing selected</option><option>Add new</option>" + options_from_collection_for_select(Person.all, "id", "name", @person.father_id) %>
+
+<%= f.label :mother_id %>
+<%= f.select :mother_id, "<option>Nothing selected</option><option>Add new</option>" + options_from_collection_for_select(Person.all, "id", "name", @person.mother_id) %>
+
+<%= f.label :date_of_birth %>
+<%= f.text_field :date_of_birth %>
+
+<%= f.label :date_of_death %>
+<%= f.text_field :date_of_death %>
+
+<%= f.label :place_of_birth %>
+<%= f.text_field :place_of_birth %>
+
+<%= f.label :place_of_death %>
+<%= f.text_field :place_of_death %>
+
+<%= f.label :place_of_burial %>
+<%= f.text_field :place_of_burial %>
+
+<%= f.label :image_url %>
+<%= f.text_field :image_url %>
+
+<%= f.label :notes %>
+<%= f.text_area :notes %>

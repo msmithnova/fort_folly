@@ -1,0 +1,58 @@
+<li>
+  <div class="container">
+    <div class="row">
+    <div class="span2">
+      <% if !person.image_url or person.image_url.blank?%>
+        <%= image_tag "/assets/NoPhotoAvailable.jpg", alt: "No Image Available" %>
+      <% else %>
+        <%= image_tag person.image_url, alt: person.name + " Image" %>
+      <% end %>
+    </div>
+    <div class="span9">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Sex</th>
+            <th>Father</th>
+            <th>Mother</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= person.name %></td>
+            <td><%= person.sex %></td>
+            <td><%= person.father.name if person.father && person.father != 0 %></td>
+            <td><%= person.mother.name if person.mother && person.mother != 0 %></td>
+          </tr>
+        </tbody>
+        </table>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date of birth</th>
+            <th>Place of birth</th>
+            <th>Date of death</th>
+            <th>Place of death</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= person.date_of_birth %></td>
+            <td><%= person.place_of_birth %></td>
+            <td><%= person.date_of_death %></td>
+            <td><%= person.place_of_death %></td>
+          </tr>
+        </tbody>
+        </table>
+
+        <%= link_to "show", person %>
+        <% if current_user.admin? %>
+          | <%= link_to "edit", edit_person_path(person.id) %>
+          | <%= link_to "delete", person, method: :delete, data: { confirm: "You sure?" } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</li>

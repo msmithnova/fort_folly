@@ -1,0 +1,14 @@
+<% provide(:title, 'All people') %>
+<h1>All people</h1>
+
+<%= will_paginate %>
+
+<% @people.each do |person| %>
+<ul class="users">
+   <%= render person %>
+</ul>
+<% end %>
+
+<%= link_to "Add new person", new_person_path %>
+
+<%= will_paginate %>

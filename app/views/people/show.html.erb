@@ -1,0 +1,33 @@
+<% provide(:title, @person.name) %>
+<h1>Profile Page</h1>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <% if !@person.image_url or @person.image_url.blank?%>
+          <%= image_tag "/assets/NoPhotoAvailable.jpg", alt: "No Image Available" %>
+        <% else %>
+          <%= image_tag @person.image_url, alt: @person.name + " Image" %>
+        <% end %>
+        <p><%= @person.name %></p>
+      </h1>
+    </section>
+  </aside>
+  <div class="span7">
+    <p>User ID: <%= @person.user_id %></p>
+    <p>Name: <%= @person.name %></p>
+    <p>Sex: <%= @person.sex %></p>
+    <p>Band Member: <%= @person.band_member %></p>
+    <p>Registry Number: <%= @person.registry_number %></p>
+    <p>Father Name: <%= @person.father.name %></p>
+    <p>Mother Name: <%= @person.mother.name %></p>
+    <p>Date of Birth: <%= @person.date_of_birth %></p>
+    <p>Date of Death: <%= @person.date_of_death %></p>
+    <p>Place of Birth: <%= @person.place_of_birth %></p>
+    <p>Place of Death: <%= @person.place_of_death %></p>
+    <p>Place of Burial: <%= @person.place_of_burial %></p>
+    <p>Notes: <%= @person.notes %></p>
+  <p><%= link_to "Back to index", people_path %> | <%= link_to "Add new person", new_person_path %>
+  </p>
+  </div>
+</div>

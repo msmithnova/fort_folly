@@ -1,0 +1,11 @@
+<% provide(:title, 'New Person') %>
+<h1>New Person</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@person) do |f| %>
+      <%= render 'fields', f: f %>
+      <%= f.submit "Create person", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
