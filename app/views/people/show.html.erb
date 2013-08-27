@@ -19,8 +19,8 @@
     <p>Sex: <%= @person.sex %></p>
     <p>Band Member: <%= @person.band_member %></p>
     <p>Registry Number: <%= @person.registry_number %></p>
-    <p>Father Name: <%= @person.father.name %></p>
-    <p>Mother Name: <%= @person.mother.name %></p>
+    <p>Father Name: <%= @person.father.name  if @person.father && @person.father != 0%></p>
+    <p>Mother Name: <%= @person.mother.name  if @person.mother && @person.mother != 0%></p>
     <p>Date of Birth: <%= @person.date_of_birth %></p>
     <p>Date of Death: <%= @person.date_of_death %></p>
     <p>Place of Birth: <%= @person.place_of_birth %></p>
