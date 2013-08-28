@@ -1,5 +1,7 @@
 class Person < ActiveRecord::Base
-  attr_accessible :user_id, :name, :sex, :band_member, :registry_number, :father_id, :mother_id, :date_of_birth, :date_of_death, :place_of_birth, :place_of_death, :place_of_burial, :image_url, :notes
+  attr_accessible :user_id, :name, :sex, :band_member, :registry_number, :father_id, :mother_id, :date_of_birth, :date_of_death, :place_of_birth, :place_of_death, :place_of_burial, :notes, :photo
+  has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" },
+      :default_url => "/assets/NoPhotoAvailable.jpg"
   belongs_to :user
   belongs_to :father, :class_name => 'Person'
   belongs_to :mother, :class_name => 'Person'

@@ -4,10 +4,10 @@
   <aside class="span4">
     <section>
       <h1>
-        <% if !@person.image_url or @person.image_url.blank?%>
+        <% if !@person.photo.url or @person.photo.url.blank?%>
           <%= image_tag "/assets/NoPhotoAvailable.jpg", alt: "No Image Available" %>
         <% else %>
-          <%= image_tag @person.image_url, alt: @person.name + " Image" %>
+          <%= image_tag @person.photo.url , alt: @person.name + " Image" %>
         <% end %>
         <p><%= @person.name %></p>
       </h1>

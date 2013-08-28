@@ -1,5 +1,11 @@
 <li>
-  <%= gravatar_for user, size: 52 %>
+  <% if user.use_gravatar %>
+    <%= gravatar_for user, size: 52 %>
+  <% elsif !user.avatar.blank? %>
+    <%= image_tag user.avatar.url, alt: "User Image", width: 52, height: 52 %>
+  <% else %>
+    <%= image_tag "/assets/NoPhotoAvailable.jpg", alt: "No Image Available", width: 52, height: 52 %>
+  <% end %>
   <%= link_to user.name, user %>
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,

@@ -11,3 +11,10 @@
 
 <%= f.label :password_confirmation, "Confirm Password" %>
 <%= f.password_field :password_confirmation %>
+
+<%= f.label :use_gravatar%>
+<%= f.check_box :use_gravatar%>
+<br /><br />OR
+<%= f.label :avatar, "Upload Avatar"%>
+<%= f.file_field :avatar %>
+<br />

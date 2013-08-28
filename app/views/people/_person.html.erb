@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row">
     <div class="span2">
-      <% if !person.image_url or person.image_url.blank?%>
+      <% if !person.photo.url or person.photo.url.blank?%>
         <%= image_tag "/assets/NoPhotoAvailable.jpg", alt: "No Image Available" %>
       <% else %>
-        <%= image_tag person.image_url, alt: person.name + " Image" %>
+        <%= image_tag person.photo.url, alt: person.name + " Image" %>
       <% end %>
     </div>
     <div class="span9">

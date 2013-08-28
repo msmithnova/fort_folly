@@ -1,12 +1,13 @@
 <% provide(:title, "Edit person") %>
 <h1>Update person profile</h1>
-
-<% if @person.image_url %>
-  <%= image_tag @person.image_url, alt: @person.name + " Image", width: "100", height: "100" %>
-<% end %>
-
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span3">
+    <% if @person.photo.url %>
+      <%= image_tag @person.photo.url , alt: @person.name + " Image" %>
+    <% end %>
+  </div>
+
+  <div class="span6">
     <%= form_for(@person) do |f| %>
       <%= render 'fields', f: f %>
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>

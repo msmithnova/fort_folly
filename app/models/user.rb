@@ -10,7 +10,9 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :avatar, :use_gravatar
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" },
+      :default_url => "/assets/NoPhotoAvailable.jpg"
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy

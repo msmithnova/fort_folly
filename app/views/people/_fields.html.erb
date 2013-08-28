@@ -36,8 +36,9 @@
 <%= f.label :place_of_burial %>
 <%= f.text_field :place_of_burial %>
 
-<%= f.label :image_url %>
-<%= f.text_field :image_url %>
-
 <%= f.label :notes %>
 <%= f.text_area :notes %>
+
+<%= f.label :photo, "Upload Photo"%>
+<%= f.file_field :photo %>
+<br />
